@@ -1,0 +1,15 @@
+*   bb6267f Resolved merge conflicts
+|\  
+| *   c0b730f Merge pull request #18 from markokadzbanov/10-list-tasks-sorted-by-name
+| |\  
+| | * 79d1ca5 Implement Find all completed tasks
+| * |   0bb4134 Merge pull request #19 from markokadzbanov/12-filter-tasks-by-category
+| |\ \  
+| | |/  
+| |/|   
+| | * 64d805a Implement Find all completed tasks
+| |/  
+* / ff32b56 Implement removeTask function
+|/  
+* f951b9d Add starter code
+* 8ca2f82 Initial commit

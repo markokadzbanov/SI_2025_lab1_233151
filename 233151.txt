@@ -1,0 +1,181 @@
+Дел 2:
+13. $ git fetch origin
+From https://github.com/markokadzbanov/SI_2025_lab1_233151
+ * [new branch]      1-remove-a-task-by-name -> origin/1-remove-a-task-by-name
+ * [new branch]      10-list-tasks-sorted-by-name -> origin/10-list-tasks-sorted-by-name
+ * [new branch]      12-filter-tasks-by-category -> origin/12-filter-tasks-by-category
+14. $ git checkout 1-remove-a-task-by-name
+branch '1-remove-a-task-by-name' set up to track 'origin/1-remove-a-task-by-name'.
+Switched to a new branch '1-remove-a-task-by-name'
+15. $ nano SI2025Lab1Main.java
+Во SI2025Lab1Main.java во делот MISSING FEATURES
+ја имплементирав соодветаната фунција така што и додадов:
+во // TODO: Implement removal logic
+public void removeTask(String name) {
+    tasks.removeIf(task -> task.getName().equals(name));
+}
+16. $ git add .
+warning: in the working copy of 'SI2025Lab1Main.java', LF will be replaced by CRLF the next time Git touches it
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (1-remove-a-task-by-name)
+$ git commit -m "Implement removeTask function"
+[1-remove-a-task-by-name ff32b56] Implement removeTask function
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+17. 
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (1-remove-a-task-by-name)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 386 bytes | 386.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/markokadzbanov/SI_2025_lab1_233151.git
+   f951b9d..ff32b56  1-remove-a-task-by-name -> 1-remove-a-task-by-name
+
+
+18.
+
+19.$ git checkout 10-list-tasks-sorted-by-name
+branch '10-list-tasks-sorted-by-name' set up to track 'origin/10-list-tasks-sorted-by-name'.
+Switched to a new branch '10-list-tasks-sorted-by-name'
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (10-list-tasks-sorted-by-name)
+$ nano SI2025Lab1Main.java
+
+
+public void sortTasksByName() {
+    tasks.sort(Comparator.comparing(Task::getName));
+}
+
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (10-list-tasks-sorted-by-name)
+$ git add .
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (10-list-tasks-sorted-by-name)
+$ git commit -m "Implement Find all completed tasks"
+[10-list-tasks-sorted-by-name 79d1ca5] Implement Find all completed tasks
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (10-list-tasks-sorted-by-name)
+$ git push origin 10-list-tasks-sorted-by-name
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 387 bytes | 387.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/markokadzbanov/SI_2025_lab1_233151.git
+   f951b9d..79d1ca5  10-list-tasks-sorted-by-name -> 10-list-tasks-sorted-by-name
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (10-list-tasks-sorted-by-name)
+$
+
+
+
+nano SI2025Lab1Main.java
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (12-filter-tasks-by-category)
+$ git add .
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (12-filter-tasks-by-category)
+$ git commit -m "Implement Filter tasks by category"
+On branch 12-filter-tasks-by-category
+Your branch is ahead of 'origin/12-filter-tasks-by-category' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (12-filter-tasks-by-category)
+$ git push origin 12-filter-tasks-by-category
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 439 bytes | 439.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/markokadzbanov/SI_2025_lab1_233151.git
+   f951b9d..64d805a  12-filter-tasks-by-category -> 12-filter-tasks-by-category
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (12-filter-tasks-by-category)
+$
+
+
+
+
+public List<Task> filterByCategory(String category) {
+    // TODO: Implement filtering logic
+    List<Task> filteredTasks = new ArrayList<>();
+    for (Task task : tasks) {
+        if (task.getCategory().equals(category)) {
+            filteredTasks.add(task);
+        }
+    }
+    
+    return new ArrayList<>();
+
+
+
+
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master|MERGING)
+$ git push origin master
+To https://github.com/markokadzbanov/SI_2025_lab1_233151.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/markokadzbanov/SI_2025_lab1_233151.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master|MERGING)
+$ git pull origin master
+error: You have not concluded your merge (MERGE_HEAD exists).
+hint: Please, commit your changes before merging.
+fatal: Exiting because of unfinished merge.
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master|MERGING)
+$ ^C
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 4 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   SI2025Lab1Main.java
+
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master|MERGING)
+$ ^C
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master|MERGING)
+$ git commit -m "Resolved merge conflicts"
+[master bb6267f] Resolved merge conflicts
+
+Lenovo@DESKTOP-47L1NQ8 MINGW64 ~/SI_2025_lab1_233151 (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 412 bytes | 412.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/markokadzbanov/SI_2025_lab1_233151.git
+   c0b730f..bb6267f  master -> master
+  
+
+
+
+
+
